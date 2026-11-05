@@ -1,0 +1,9 @@
+# Never publish the raw CV (see AGENTS.md)
+*.pdf
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.env

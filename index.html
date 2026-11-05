@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fran Tumajan</title>
+  <meta name="description" content="Fran Tumajan — MBA, Columbia Business School (May 2027). Education, experience, and additional information.">
+  <style>
+    :root {
+      --columbia: #B9D9EB;
+      --columbia-soft: #E3F0F8;
+      --navy: #002B5C;
+      --blue: #1D4F91;
+      --bg: #F4F8FB;
+      --card: #FFFFFF;
+      --text: #1A2B3C;
+      --muted: #52657A;
+      --line: #D6E4EE;
+      --radius: 10px;
+      --shadow: 0 1px 2px rgba(0, 43, 92, .06), 0 4px 14px rgba(0, 43, 92, .06);
+      --font: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body { margin: 0; font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: var(--blue); }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--columbia); outline-offset: 2px; border-radius: 4px; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navigation */
+    .nav { position: sticky; top: 0; z-index: 10; background: var(--navy); border-bottom: 3px solid var(--columbia); }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; }
+    .brand { color: #fff; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; font-size: .95rem; white-space: nowrap; }
+    .nav ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; overflow-x: auto; }
+    .nav ul a { display: block; color: #DCEBF5; text-decoration: none; padding: 8px 12px; border-radius: 6px; font-size: .92rem; white-space: nowrap; }
+    .nav ul a:hover, .nav ul a.active { background: rgba(185, 217, 235, .18); color: #fff; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%); color: #fff; padding: 56px 0 72px; }
+    .hero .wrap { display: flex; align-items: center; gap: 36px; }
+    .hero img { width: 168px; height: 168px; border-radius: 50%; object-fit: cover; border: 5px solid var(--columbia); flex-shrink: 0; }
+    .hero h1 { margin: 0 0 4px; font-size: 2.6rem; letter-spacing: .01em; }
+    .hero .tagline { margin: 0 0 18px; color: var(--columbia); font-size: 1.15rem; }
+    .contact { display: flex; flex-wrap: wrap; gap: 10px; }
+    .contact a { display: inline-flex; align-items: center; gap: 8px; color: var(--navy); background: var(--columbia); text-decoration: none; padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: .9rem; }
+    .contact a:hover { background: #fff; }
+    .contact svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* Quick-jump tiles */
+    .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: -40px; }
+    .tile { display: block; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px; text-decoration: none; color: var(--text); border-top: 4px solid var(--columbia); transition: transform .15s, border-color .15s; }
+    .tile:hover { transform: translateY(-3px); border-top-color: var(--blue); }
+    .tile .k { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+    .tile .v { display: block; font-weight: 700; color: var(--navy); font-size: 1.05rem; margin-top: 2px; }
+    .tile .s { font-size: .85rem; color: var(--muted); }
+
+    /* Sections */
+    section { padding: 56px 0 8px; }
+    .section-title { display: flex; align-items: center; gap: 14px; margin: 0 0 24px; color: var(--navy); font-size: 1.1rem; text-transform: uppercase; letter-spacing: .12em; }
+    .section-title::after { content: ""; flex: 1; height: 2px; background: var(--columbia); }
+    .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px 26px; margin-bottom: 18px; border-left: 5px solid var(--columbia); }
+    .card-head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .card h3 { margin: 0; color: var(--navy); font-size: 1.15rem; letter-spacing: .02em; }
+    .meta { text-align: right; color: var(--muted); font-size: .92rem; }
+    .meta span { display: block; }
+    .degree { margin: 2px 0 0; }
+    .degree strong { color: var(--navy); }
+    .badge { display: inline-block; background: var(--columbia-soft); color: var(--navy); border: 1px solid var(--columbia); font-weight: 600; font-size: .8rem; padding: 2px 10px; border-radius: 999px; margin-left: 6px; vertical-align: 1px; }
+    .detail { margin: 10px 0 0; font-size: .95rem; }
+    .detail em { color: var(--muted); font-style: normal; font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+    .chip { background: var(--bg); border: 1px solid var(--line); color: var(--text); font-size: .85rem; padding: 3px 10px; border-radius: 6px; }
+
+    .role { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line); }
+    .role:first-of-type { border-top: 0; padding-top: 0; }
+    .role h4 { margin: 0; color: var(--blue); font-size: 1rem; }
+    .role h4 .yr { color: var(--muted); font-weight: 400; }
+    .rating { margin: 2px 0 0; font-style: italic; color: var(--muted); font-size: .92rem; }
+    .role ul { margin: 10px 0 0; padding-left: 20px; }
+    .role li { margin-bottom: 6px; }
+
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .info-grid .card { margin: 0; }
+    .info-grid h3 { font-size: 1rem; margin-bottom: 10px; }
+    .info-grid dl { margin: 0; }
+    .info-grid dt { font-weight: 600; color: var(--navy); font-size: .9rem; margin-top: 8px; }
+    .info-grid dd { margin: 0; color: var(--text); }
+
+    footer { margin-top: 56px; background: var(--navy); color: #C9DDEA; padding: 26px 0; font-size: .9rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer a { color: var(--columbia); }
+    .top-link { text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .brand { display: none; }
+      .nav .wrap { justify-content: flex-start; padding: 0 8px; }
+      .hero { padding: 36px 0 64px; }
+      .hero .wrap { flex-direction: column; text-align: center; gap: 20px; }
+      .hero img { width: 132px; height: 132px; }
+      .hero h1 { font-size: 2rem; }
+      .contact { justify-content: center; }
+      .meta { text-align: left; }
+      .card { padding: 20px 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .tile { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="#top">Fran Tumajan</a>
+      <ul>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#additional">Additional Info</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <img src="Tumajan_Fran%20Headshot.jpeg" alt="Headshot of Fran Tumajan">
+      <div>
+        <h1>Fran Tumajan</h1>
+        <p class="tagline">MBA, Columbia Business School &middot; May 2027</p>
+        <div class="contact" id="contact">
+          <a href="mailto:FTumajanyoussef27@gsb.columbia.edu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+            Email
+          </a>
+          <a href="https://www.linkedin.com/in/fran-tumajan/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/tumajanfran1" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- Quick-jump tiles -->
+    <div class="tiles" aria-label="Jump to section">
+      <a class="tile" href="#education"><span class="k">Education</span><span class="v">Columbia &middot; Imperial &middot; UH</span><span class="s">MBA, MSc, BSc</span></a>
+      <a class="tile" href="#citi"><span class="k">Experience</span><span class="v">Citi &ndash; M&amp;A</span><span class="s">New York &middot; 2026</span></a>
+      <a class="tile" href="#kearney"><span class="k">Experience</span><span class="v">Kearney</span><span class="s">Dubai &middot; 2023&ndash;2025</span></a>
+      <a class="tile" href="#pwc"><span class="k">Experience</span><span class="v">PwC</span><span class="s">Dubai &middot; 2021&ndash;2023</span></a>
+      <a class="tile" href="#additional"><span class="k">More</span><span class="v">Additional Info</span><span class="s">Languages &amp; interests</span></a>
+    </div>
+
+    <!-- EDUCATION -->
+    <section id="education" aria-labelledby="education-h">
+      <h2 class="section-title" id="education-h">Education</h2>
+
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h3>Columbia Business School</h3>
+            <p class="degree"><strong>MBA</strong>, May 2027</p>
+          </div>
+          <div class="meta"><span>New York, NY</span><span>2025&ndash;2027</span></div>
+        </div>
+        <p class="detail"><em>Member</em></p>
+        <div class="chips">
+          <span class="chip">ETA Club</span><span class="chip">Latin America Business Association</span><span class="chip">MENA Club</span><span class="chip">Wine Society</span>
+        </div>
+        <p class="detail"><em>Leadership</em></p>
+        <div class="chips">
+          <span class="chip">Business Analytics Teaching Assistant</span><span class="chip">Investment Banking Club M&amp;A Lead</span><span class="chip">Tutor</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h3>Imperial College London</h3>
+            <p class="degree"><strong>MSc</strong>, Chemical Engineering, October 2021 <span class="badge">Distinction</span></p>
+          </div>
+          <div class="meta"><span>London, UK</span><span>2020&ndash;2021</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h3>University of Houston</h3>
+            <p class="degree"><strong>BSc</strong>, Chemical Engineering, May 2020 <span class="badge">GPA 3.95/4.00</span></p>
+          </div>
+          <div class="meta"><span>Houston, TX</span><span>2015&ndash;2020</span></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" aria-labelledby="experience-h">
+      <h2 class="section-title" id="experience-h">Experience</h2>
+
+      <article class="card" id="citi">
+        <div class="card-head">
+          <h3>Citi &ndash; M&amp;A</h3>
+          <div class="meta"><span>New York, NY</span><span>2026</span></div>
+        </div>
+        <div class="role">
+          <h4>Investment Banking M&amp;A Summer Associate <span class="yr">(2026)</span></h4>
+          <ul>
+            <li>Executed Phases I and II of a ~$2B sell-side telecom transaction, refining the operating model, managing buyer communications and the VDR, and preparing marketing materials</li>
+            <li>Conducted the valuation of an ~$8B nationwide car dealership group across multiple methodologies to inform the client on strategic alternatives to increase shareholder value</li>
+            <li>Built a spend cube from 10+ years of financials for a ~$600M healthcare software target to inform a PE firm's buy-side diligence</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card" id="kearney">
+        <div class="card-head">
+          <h3>Kearney &ndash; Strategic Operations Practice</h3>
+          <div class="meta"><span>Dubai, UAE</span><span>2023&ndash;2025</span></div>
+        </div>
+        <div class="role">
+          <h4>Associate <span class="yr">(2025)</span></h4>
+          <ul>
+            <li>Identified 20+ private sector investment opportunities worth ~$1B in the Water, Industrials, Pharmaceutical, and IT&amp;T sectors in a country in the MENAP region, shaping the national investment pipeline based on the country&rsquo;s growth targets</li>
+            <li>Conducted prefeasibility analysis on 20+ investment opportunities, including value chain analysis, identification of revenue and cost levers, and design of initiatives to optimize returns on investments</li>
+            <li>Facilitated direct discussions among strategic investors, companies, and government entities to discuss investment opportunities</li>
+            <li>Developed FDI strategy for a country in the MENAP region to target investments from China, Azerbaijan, and the UAE, resulting in meetings with investment delegations of these countries</li>
+          </ul>
+        </div>
+        <div class="role">
+          <h4>Senior Business Analyst <span class="yr">(2023&ndash;2025)</span></h4>
+          <p class="rating">Rated &ldquo;Exceptional&rdquo; &ndash; top 5% of cohort</p>
+          <ul>
+            <li>Executed investment analysis for 10+ national PPP infrastructure projects worth ~$2B, advancing opportunities along the deals cycle to the advisor engagement and transaction stage</li>
+            <li>Prepared business plan and financial model for a ~$2B battery plant in Saudi Arabia, approved by investment committee and advanced to Phase 2 (joint feasibility with investors)</li>
+            <li>Conducted market sounding sessions with leading banks in the MENAP region to understand macroeconomic conditions, such as interest rates and credit limits, to better inform investment analyses</li>
+            <li>Evaluated operational and financial feasibility of 5 investment opportunities in the Machinery &amp; Equipment sector, developing business plans and conducting meetings with investors to execute opportunities</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card" id="pwc">
+        <div class="card-head">
+          <h3>PricewaterhouseCoopers (PwC) &ndash; Supply Chain &amp; Efficiency Practice</h3>
+          <div class="meta"><span>Dubai, UAE</span><span>2021&ndash;2023</span></div>
+        </div>
+        <div class="role">
+          <h4>Business Analyst <span class="yr">(2021&ndash;2023)</span></h4>
+          <p class="rating">Rated top 10% of cohort</p>
+          <ul>
+            <li>Analyzed and categorized ~$10B in OPEX government spend for the Emirate of Abu Dhabi, allowing for higher spend visibility for client and identification of high spend categories</li>
+            <li>Evaluated 10 investment opportunities in the construction sector for investor attraction, leading to 2 investors signing MoUs</li>
+            <li>Designed and implemented Procurement &amp; Contracting department of a ~$5B GCC government construction company</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- ADDITIONAL INFORMATION -->
+    <section id="additional" aria-labelledby="additional-h">
+      <h2 class="section-title" id="additional-h">Additional Information</h2>
+      <div class="info-grid">
+        <article class="card">
+          <h3>Languages &amp; Nationality</h3>
+          <dl>
+            <dt>Languages</dt><dd>Spanish (native), French (intermediate)</dd>
+            <dt>Nationality</dt><dd>Venezuelan, Lebanese</dd>
+          </dl>
+        </article>
+        <article class="card">
+          <h3>Interests</h3>
+          <dl>
+            <dt>Photography</dt><dd>Built portfolio of 20+ cities</dd>
+            <dt>Traveling</dt><dd>30 countries</dd>
+            <dt>Padel</dt><dd>2 years of playing padel</dd>
+          </dl>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 Fran Tumajan</span>
+      <span><a href="mailto:FTumajanyoussef27@gsb.columbia.edu">Email</a> &middot; <a href="https://www.linkedin.com/in/fran-tumajan/" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://github.com/tumajanfran1" target="_blank" rel="noopener">GitHub</a> &middot; <a class="top-link" href="#top">Back to top &uarr;</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // Highlight the current section in the nav (optional enhancement; site works without JS)
+    (function () {
+      var links = document.querySelectorAll('.nav ul a[href^="#"]');
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      if (!('IntersectionObserver' in window)) return;
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && map[e.target.id]) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            map[e.target.id].classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      ['education', 'experience', 'additional'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) obs.observe(el);
+      });
+    })();
+  </script>
+</body>
+</html>
